@@ -9,6 +9,8 @@ package:
 source:
   - url: http://downloads.sourceforge.net/irrlicht/irrlicht-{{ version }}.zip
     sha256: f42b280bc608e545b820206fe2a999c55f290de5c7509a02bdbeeccc1bf9e433
+    patches:
+      - support_jpeg_v9.patch
   # This adds a CMakeLists.txt file to build Irrlicht
   # Originally based on https://github.com/microsoft/vcpkg/blob/2020.11-1/ports/irrlicht/portfile.cmake
   - path: CMakeLists.txt
