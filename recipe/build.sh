@@ -8,7 +8,7 @@ mkdir build && cd build
 CXXFLAGS=$(echo "${CXXFLAGS}" | sed "s/-std=c++/-std=gnu++/g")
 
 # -fpermessive is necessary to compile irrlicht with jpeg v9
-CXXFLAGS="${CXXFLAGS} -fpermessive"
+CXXFLAGS="${CXXFLAGS} -fpermissive"
 
 cmake -DCMAKE_INSTALL_PREFIX=$PREFIX \
       -DCMAKE_PREFIX_PATH=$PREFIX \
