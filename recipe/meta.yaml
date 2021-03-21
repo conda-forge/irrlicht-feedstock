@@ -39,7 +39,7 @@ requirements:
     
   host:
     - bzip2
-    - libjpeg-turbo
+    - jpeg
     - libpng
     - zlib
     - xorg-libxfixes  # [linux]
