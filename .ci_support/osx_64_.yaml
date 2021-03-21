@@ -14,8 +14,8 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '11'
-libjpeg_turbo:
-- '2'
+jpeg:
+- '9'
 libpng:
 - '1.6'
 macos_machine:
@@ -23,7 +23,7 @@ macos_machine:
 pin_run_as_build:
   bzip2:
     max_pin: x
-  libjpeg_turbo:
+  jpeg:
     max_pin: x
   libpng:
     max_pin: x.x
