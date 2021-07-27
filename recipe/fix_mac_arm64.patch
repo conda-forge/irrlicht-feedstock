@@ -1,3 +1,5 @@
+diff --git a/source/Irrlicht/MacOSX/CIrrDeviceMacOSX.mm b/source/Irrlicht/MacOSX/CIrrDeviceMacOSX.mm
+index ad493fc..f725fdb 100644
 --- a/source/Irrlicht/MacOSX/CIrrDeviceMacOSX.mm
 +++ b/source/Irrlicht/MacOSX/CIrrDeviceMacOSX.mm
 @@ -496,7 +496,7 @@ CIrrDeviceMacOSX::CIrrDeviceMacOSX(const SIrrlichtCreationParameters& param)
