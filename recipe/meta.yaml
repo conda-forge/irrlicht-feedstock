@@ -1,5 +1,5 @@
 {% set name = "irrlicht" %}
-{% set version = "1.8.4" %}
+{% set version = "1.8.5" %}
 {% set major_minor_version = version.split('.')[0] + "." + version.split('.')[1] %}
 
 package:
@@ -8,13 +8,13 @@ package:
 
 source:
   - url: http://downloads.sourceforge.net/irrlicht/irrlicht-{{ version }}.zip
-    sha256: f42b280bc608e545b820206fe2a999c55f290de5c7509a02bdbeeccc1bf9e433
+    sha256: effb7beed3985099ce2315a959c639b4973aac8210f61e354475a84105944f3d
   # This adds a CMakeLists.txt file to build Irrlicht
   # Originally based on https://github.com/microsoft/vcpkg/blob/2020.11-1/ports/irrlicht/portfile.cmake
   - path: CMakeLists.txt
 
 build:
-  number: 1
+  number: 0
   run_exports:
     # https://abi-laboratory.pro/index.php?view=timeline&l=irrlicht
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -36,7 +36,6 @@ requirements:
     - {{ cdt('libxext-devel') }}  # [linux]
     - {{ cdt('libx11') }}  # [linux]
     - {{ cdt('libx11-devel') }}  # [linux]
-    
   host:
     - bzip2
     - jpeg
