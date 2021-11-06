@@ -1,4 +1,6 @@
 #!/bin/sh
+# Get an updated config.sub and config.guess
+cp $BUILD_PREFIX/share/gnuconfig/config.* ./source/Irrlicht/jpeglib
 echo "This is src dir SRC_DIR"
 echo "This is CXXFLAGS: $CXXFLAGS"
 
@@ -10,7 +12,7 @@ CXXFLAGS=$(echo "${CXXFLAGS}" | sed "s/-std=c++/-std=gnu++/g")
 # -fpermessive is necessary to compile irrlicht with jpeg v9
 CXXFLAGS="${CXXFLAGS} -fpermissive"
 
-cmake -DCMAKE_INSTALL_PREFIX=$PREFIX \
+cmake ${CMAKE_ARGS} -DCMAKE_INSTALL_PREFIX=$PREFIX \
       -DCMAKE_PREFIX_PATH=$PREFIX \
       -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_INSTALL_LIBDIR=lib \
