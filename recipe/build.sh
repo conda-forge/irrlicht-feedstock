@@ -2,10 +2,11 @@
 echo "This is src dir SRC_DIR"
 echo "This is CXXFLAGS: $CXXFLAGS"
 
-# Enable SDL
-sed -i 's/\/\/#define _IRR_COMPILE_WITH_SDL_DEVICE_/#define _IRR_COMPILE_WITH_SDL_DEVICE_/g' $SRC_DIR/include/IrrCompileConfig.h
-
 mkdir build && cd build
+
+# Enable SDL
+sed 's/\/\/#define _IRR_COMPILE_WITH_SDL_DEVICE_/#define _IRR_COMPILE_WITH_SDL_DEVICE_/g' $SRC_DIR/include/IrrCompileConfig.h > ./PatchedIrrCompileConfig.h
+cp ./PatchedIrrCompileConfig.h $SRC_DIR/include/IrrCompileConfig.h 
 
 # GNU extensions are required by Irrlicht
 CXXFLAGS=$(echo "${CXXFLAGS}" | sed "s/-std=c++/-std=gnu++/g")
