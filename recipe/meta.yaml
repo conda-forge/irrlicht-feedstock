@@ -9,8 +9,8 @@ package:
 source:
   - url: http://downloads.sourceforge.net/irrlicht/irrlicht-{{ version }}.zip
     sha256: effb7beed3985099ce2315a959c639b4973aac8210f61e354475a84105944f3d
-    patches:
-      - enablesdl.patch
+    patches:  # [win]
+      - enablesdl.patch  # [linux]
   # This adds a CMakeLists.txt file to build Irrlicht
   # Originally based on https://github.com/microsoft/vcpkg/blob/2020.11-1/ports/irrlicht/portfile.cmake
   - path: CMakeLists.txt
@@ -47,9 +47,11 @@ requirements:
     - xorg-libxfixes  # [linux]
     - xorg-libx11  # [unix]
     - xorg-libxext  # [unix]
+    - libglu  # [linux]
   run:
     - xorg-libx11  # [unix]
     - xorg-libxext  # [unix]
+    - libglu  # [linux]
 
 test:
   commands:
