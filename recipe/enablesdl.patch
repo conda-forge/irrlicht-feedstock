@@ -11,7 +11,7 @@ diff --git a/include/IrrCompileConfig.h b/include/IrrCompileConfig.h
 index 6110e6b9c..c432f9119 100644
 --- a/include/IrrCompileConfig.h
 +++ b/include/IrrCompileConfig.h
-@@ -42,7 +42,7 @@
+@@ -45,7 +45,7 @@
  
  
  //! Uncomment this line to compile with the SDL device
