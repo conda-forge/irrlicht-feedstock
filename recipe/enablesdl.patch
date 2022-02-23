@@ -1,0 +1,22 @@
+From 69d042cbf141e929355afa1ae0ec62f586f2e422 Mon Sep 17 00:00:00 2001
+From: Silvio Traversaro <silvio@traversaro.it>
+Date: Wed, 23 Feb 2022 09:31:24 +0100
+Subject: [PATCH] Update IrrCompileConfig.h
+
+---
+ include/IrrCompileConfig.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/IrrCompileConfig.h b/include/IrrCompileConfig.h
+index 6110e6b9c..c432f9119 100644
+--- a/include/IrrCompileConfig.h
++++ b/include/IrrCompileConfig.h
+@@ -42,7 +42,7 @@
+ 
+ 
+ //! Uncomment this line to compile with the SDL device
+-//#define _IRR_COMPILE_WITH_SDL_DEVICE_
++#define _IRR_COMPILE_WITH_SDL_DEVICE_
+ #ifdef NO_IRR_COMPILE_WITH_SDL_DEVICE_
+ #undef _IRR_COMPILE_WITH_SDL_DEVICE_
+ #endif
