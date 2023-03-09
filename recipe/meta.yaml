@@ -17,7 +17,7 @@ source:
   - path: CMakeLists.txt
 
 build:
-  number: 2
+  number: 3
   run_exports:
     # https://abi-laboratory.pro/index.php?view=timeline&l=irrlicht
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -41,7 +41,7 @@ requirements:
     - {{ cdt('libx11-devel') }}  # [linux]
   host:
     - bzip2
-    - jpeg
+    - libjpeg-turbo
     - libpng
     - zlib
     - sdl
