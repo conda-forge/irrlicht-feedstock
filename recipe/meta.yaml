@@ -17,7 +17,7 @@ source:
   - path: CMakeLists.txt
 
 build:
-  number: 3
+  number: 4
   run_exports:
     # https://abi-laboratory.pro/index.php?view=timeline&l=irrlicht
     - {{ pin_subpackage(name, max_pin='x.x') }}
