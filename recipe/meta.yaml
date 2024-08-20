@@ -39,6 +39,7 @@ requirements:
     - xorg-libxfixes  # [linux]
     - xorg-libx11  # [unix]
     - xorg-libxext  # [unix]
+    - xorg-libxxf86vm  # [unix]
     - libglu  # [linux]
   run:
     - xorg-libx11  # [unix]
