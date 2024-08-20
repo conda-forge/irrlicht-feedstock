@@ -1,0 +1,24 @@
+From c0f0b5091521fc16ab6b0b53844b2ce586a76cfc Mon Sep 17 00:00:00 2001
+From: cutealien <cutealien@dfc29bdd-3216-0410-991c-e03cc46cb475>
+Date: Wed, 29 Nov 2017 20:46:29 +0000
+Subject: [PATCH] Remove 'register' storage class specifier which is deprecated
+ with c++11 (and did get ignored by c++ compilers anyway since a long time).
+
+git-svn-id: svn://svn.code.sf.net/p/irrlicht/code/trunk@5589 dfc29bdd-3216-0410-991c-e03cc46cb475
+---
+ source/Irrlicht/CColorConverter.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/source/Irrlicht/CColorConverter.cpp b/source/Irrlicht/CColorConverter.cpp
+index 78b93398b..05696d58f 100644
+--- a/source/Irrlicht/CColorConverter.cpp
++++ b/source/Irrlicht/CColorConverter.cpp
+@@ -165,7 +165,7 @@ void CColorConverter::convert8BitTo32Bit(const u8* in, u8* out, s32 width, s32 h
+ 		out += lineWidth * height;
+ 
+ 	u32 x;
+-	register u32 c;
++	u32 c;
+ 	for (u32 y=0; y < (u32) height; ++y)
+ 	{
+ 		if (flip)
