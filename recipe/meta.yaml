@@ -41,6 +41,7 @@ requirements:
     - xorg-kbproto  # [linux]
     - xcb-util  # [linux]
     - xorg-libxxf86vm  # [linux]
+    - xorg-xf86vidmodeproto  # [linux]
     - xorg-libx11  # [unix]
     - xorg-libxext  # [unix]
     - libglu  # [linux]
