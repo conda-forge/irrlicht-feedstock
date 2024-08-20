@@ -38,6 +38,7 @@ requirements:
     - sdl
     - libgl-devel  # [linux]
     - xorg-libxfixes  # [linux]
+    - xorg-xorgproto  # [linux]
     - xorg-libxxf86vm  # [linux]
     - xorg-libx11  # [unix]
     - xorg-libxext  # [unix]
