@@ -54,8 +54,8 @@ test:
     - test -f ${PREFIX}/lib/libIrrlicht.so  # [linux]
     - test -f ${PREFIX}/lib/libIrrlicht.dylib  # [osx]
     - if not exist %PREFIX%\\Library\\include\\irrlicht\irrlicht.h exit 1  # [win]
-    - if not exist $PREFIX$\\Library\\lib\\Irrlicht.lib exit 1  # [win]
-    - if not exist $PREFIX$\\Library\\bin\\Irrlicht.dll exit 1  # [win]
+    - if not exist %PREFIX%\\Library\\lib\\Irrlicht.lib exit 1  # [win]
+    - if not exist %PREFIX%\\Library\\bin\\Irrlicht.dll exit 1  # [win]
 
 about:
   home: http://irrlicht.sourceforge.net/
