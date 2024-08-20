@@ -17,7 +17,7 @@ source:
   - path: CMakeLists.txt
 
 build:
-  number: 4
+  number: 5
   run_exports:
     # https://abi-laboratory.pro/index.php?view=timeline&l=irrlicht
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -28,23 +28,13 @@ requirements:
     - {{ compiler('cxx') }}
     - make                               # [not win]
     - cmake
-    - {{ cdt('mesa-libgl-devel') }}  # [linux]
-    - {{ cdt('mesa-dri-drivers') }}  # [linux]
-    - {{ cdt('libselinux') }}  # [linux]
-    - {{ cdt('libxdamage') }}  # [linux]
-    - {{ cdt('libxxf86vm') }}  # [linux]
-    - {{ cdt('libxxf86vm-devel') }}  # [linux] 
-    - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
-    - {{ cdt('libxext') }}  # [linux]
-    - {{ cdt('libxext-devel') }}  # [linux]
-    - {{ cdt('libx11') }}  # [linux]
-    - {{ cdt('libx11-devel') }}  # [linux]
   host:
     - bzip2
     - libjpeg-turbo
     - libpng
     - zlib
     - sdl
+    - libgl-devel  # [linux]
     - xorg-libxfixes  # [linux]
     - xorg-libx11  # [unix]
     - xorg-libxext  # [unix]
