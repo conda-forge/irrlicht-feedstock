@@ -10,14 +10,15 @@ source:
   - url: http://downloads.sourceforge.net/irrlicht/irrlicht-{{ version }}.zip
     sha256: effb7beed3985099ce2315a959c639b4973aac8210f61e354475a84105944f3d
     # On Unix, the sdl support is enabled with a sed invocation
-    patches:  # [win]
+    patches:
       - enablesdl.patch  # [win]
+      - cxx17_support.patch
   # This adds a CMakeLists.txt file to build Irrlicht
   # Originally based on https://github.com/microsoft/vcpkg/blob/2020.11-1/ports/irrlicht/portfile.cmake
   - path: CMakeLists.txt
 
 build:
-  number: 4
+  number: 5
   run_exports:
     # https://abi-laboratory.pro/index.php?view=timeline&l=irrlicht
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -25,27 +26,22 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
     - make                               # [not win]
     - cmake
-    - {{ cdt('mesa-libgl-devel') }}  # [linux]
-    - {{ cdt('mesa-dri-drivers') }}  # [linux]
-    - {{ cdt('libselinux') }}  # [linux]
-    - {{ cdt('libxdamage') }}  # [linux]
-    - {{ cdt('libxxf86vm') }}  # [linux]
-    - {{ cdt('libxxf86vm-devel') }}  # [linux] 
-    - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
-    - {{ cdt('libxext') }}  # [linux]
-    - {{ cdt('libxext-devel') }}  # [linux]
-    - {{ cdt('libx11') }}  # [linux]
-    - {{ cdt('libx11-devel') }}  # [linux]
   host:
     - bzip2
     - libjpeg-turbo
     - libpng
     - zlib
     - sdl
+    - libgl-devel  # [linux]
     - xorg-libxfixes  # [linux]
+    - xorg-kbproto  # [linux]
+    - xcb-util  # [linux]
+    - xorg-libxxf86vm  # [linux]
+    - xorg-xf86vidmodeproto  # [linux]
     - xorg-libx11  # [unix]
     - xorg-libxext  # [unix]
     - libglu  # [linux]
@@ -59,9 +55,9 @@ test:
     - test -f ${PREFIX}/include/irrlicht/irrlicht.h  # [not win]
     - test -f ${PREFIX}/lib/libIrrlicht.so  # [linux]
     - test -f ${PREFIX}/lib/libIrrlicht.dylib  # [osx]
-    - if exist %PREFIX%\\Library\\include\\irrlicht\irrlicht.h (exit 0) else (exit 1)  # [win]
-    - if exist $PREFIX$\\Library\\lib\\Irrlicht.lib (exit 0) else (exit 1)  # [win]
-    - if exist $PREFIX$\\Library\\bin\\Irrlicht.dll (exit 0) else (exit 1)  # [win]
+    - if not exist %PREFIX%\\Library\\include\\irrlicht\irrlicht.h exit 1  # [win]
+    - if not exist %PREFIX%\\Library\\lib\\Irrlicht.lib exit 1  # [win]
+    - if not exist %PREFIX%\\Library\\bin\\Irrlicht.dll exit 1  # [win]
 
 about:
   home: http://irrlicht.sourceforge.net/
